@@ -1,43 +1,46 @@
 package corsoBackEnd.entities;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
-@Table(name ="festa_del_paese")
+@Table(name = "festa_del_paese")
 public class festaDelPaese {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private long id;
+    private Long id;
 
-    public String titolo;
+    private String titolo;
 
-    public LocalDate dataEvento;
+    private LocalDate dataEvento;
 
-    public String descrizione;
+    private String descrizione;
 
     @Enumerated(EnumType.STRING)
-    public tipoEvento tipoEvento;
+    private tipoEvento tipoEvento;
 
-    public int numeroMassimoPartecipanti;
+    private int numeroMassimoPartecipanti;
 
-    public festaDelPaese( String titolo, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+
+    public festaDelPaese() {}
+
+
+    public festaDelPaese(String titolo, String descrizione, tipoEvento tipoEvento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.dataEvento = LocalDate.now();
         this.descrizione = descrizione;
         this.tipoEvento = tipoEvento;
-        this.numeroMassimoPartecipanti=numeroMassimoPartecipanti;
+        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -71,5 +74,13 @@ public class festaDelPaese {
 
     public void setTipoEvento(tipoEvento tipoEvento) {
         this.tipoEvento = tipoEvento;
+    }
+
+    public int getNumeroMassimoPartecipanti() {
+        return numeroMassimoPartecipanti;
+    }
+
+    public void setNumeroMassimoPartecipanti(int numeroMassimoPartecipanti) {
+        this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 }

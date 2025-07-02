@@ -6,7 +6,7 @@
         <!-- Il persistence unit ci serve per configurare la connessione ad uno specifico db -->
         <class>corsoBackEnd.entities.festaDelPaese</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4d12"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4d13"/>
             <!-- Dopo l'ultimo slash inserisco il nome del database al quale voglio collegarmi (IL DB DEVE ESISTERE PERO') -->
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="1234"/>
